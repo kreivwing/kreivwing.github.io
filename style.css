@@ -1,4 +1,157 @@
+/* 기본 스타일 */
 body {
-    font-family: sans-serif;
-    margin: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+/* 헤더 */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 메인 콘텐츠 */
+main {
+    width: 70%;
+    padding-right: 20px;
+}
+
+article {
+    background: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.post-meta {
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 사이드바 */
+aside {
+    width: 30%;
+}
+
+.profile, .categories {
+    background: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #333;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+/* 메뉴 토글 버튼 */
+.menu-toggle {
+    display: none; /* 평소에는 숨김 */
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.bar {
+    background: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    main, aside {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .menu-toggle {
+        display: flex; /* 작은 화면에서 보임 */
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .main-nav ul {
+        display: none; /* 평소에는 메뉴 숨김 */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #333;
+        position: absolute;
+        top: 60px; /* 헤더 높이에 따라 조정 */
+        left: 0;
+    }
+
+    .main-nav ul.active {
+        display: flex; /* 클릭 시 메뉴 보임 */
+    }
+
+    .main-nav ul li {
+        padding: 1rem 0;
+    }
 }
